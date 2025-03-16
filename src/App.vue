@@ -9,7 +9,7 @@ import Navbar from './components/Navbar.vue';
   <Navbar />
   <Hero />
   <HomeCards />
-  <JobListings />
+  <JobListings :limit="3" :showButton="true" />
 </template>
 
 <style scoped></style>
