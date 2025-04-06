@@ -11,6 +11,13 @@ export default defineConfig({
   ],
   server: {
     port: 3000, // Change the port if needed
+    proxy: {
+      '/api': {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''),
+      }
+    }
   },
   alias: {
     '/@/': path.resolve(__dirname, './src')
